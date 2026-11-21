@@ -99,27 +99,5 @@ The Zustand store is wrapped in `persist`, which writes the wizard's step index 
 
 ## Deployment
 
-### Vercel
-1. Push this project to a GitHub repository.
-2. Go to [vercel.com/new](https://vercel.com/new) and import the repo.
-3. Framework preset: **Vite**. Build command: `npm run build`. Output directory: `dist`.
-4. Deploy — no environment variables are required for this demo.
 
-### Netlify
-1. Push the project to GitHub.
-2. In Netlify, "Add new site → Import an existing project".
-3. Build command: `npm run build`. Publish directory: `dist`.
-4. Deploy.
 
-### Any static host (GitHub Pages, S3, etc.)
-```bash
-npm run build
-# upload the contents of dist/ to your host
-```
-
-## Next steps for a real production build
-
-- Replace `verifyPAN` / `verifyAadhaar` / `lookupPincode` in `src/utils/validation.js` with real API integrations (NSDL/UIDAI-authorised KYC provider, India Post PIN API).
-- Replace the simulated `handleSubmit` in `src/pages/Review.jsx` with a real API call to your loan-origination backend, and upload documents to object storage instead of keeping them as data URLs in the browser.
-- Add authentication if applications should be tied to a logged-in user rather than a browser-local draft.
-- Add server-side re-validation — never trust client-side Zod checks alone for a financial product.
